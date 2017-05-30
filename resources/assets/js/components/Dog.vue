@@ -27,7 +27,7 @@
                           <tbody>
                             <tr v-for="reg in regs" v-if="status.indexOf(reg.status) != -1 &&  doc.indexOf(reg.document) != -1">
                               <th scope="row">{{reg.id}}</th>
-                              <td>{{reg.created_at}} </td>
+                              <td> <a :href="'/dog/'+reg.id"> {{reg.created_at}} </a></td>
                               <td>{{reg.id}} </td>
                               <td>{{reg.document}} </td>
                               <td>{{reg.note}} </td>
@@ -76,7 +76,7 @@
                     <div class="form-group">
                       <label >Основное</label>
                     </div>
-                      <select class="form-control custom-select mb-3 mr-sm-3 mb-sm-0" id="inlineFormCustomSelect">
+                      <select v-model="vd" class="form-control custom-select mb-3 mr-sm-3 mb-sm-0" id="inlineFormCustomSelect">
                         <option selected>Вид документа</option>
                         <option value="1">Договор доходный</option>
                         <option value="2">Договор расходный</option>
@@ -143,6 +143,7 @@
                 regs: {},
                 status: [],
                 doc: [],
+                vd: [],
                 post: null,
                 type: 1
             }

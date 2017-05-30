@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Registry;
 
 class DogController extends Controller
 {
@@ -48,6 +49,9 @@ class DogController extends Controller
     public function show($id)
     {
         //
+        $reg = Registry::find($id);
+
+        return view('dog.show', compact('reg'));
     }
 
     /**

@@ -12296,6 +12296,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             regs: {},
             status: [],
             doc: [],
+            vd: [],
             post: null,
             type: 1
         };
@@ -32238,7 +32239,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "scope": "row"
       }
-    }, [_vm._v(_vm._s(reg.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.created_at) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.id) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.document) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.note) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.counterparty) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.price) + " ")])]) : _vm._e()
+    }, [_vm._v(_vm._s(reg.id))]), _vm._v(" "), _c('td', [_c('a', {
+      attrs: {
+        "href": '/dog/' + reg.id
+      }
+    }, [_vm._v(" " + _vm._s(reg.created_at) + " ")])]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.id) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.document) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.note) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.counterparty) + " ")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(reg.price) + " ")])]) : _vm._e()
   }))])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-3"
   }, [_c('div', {
@@ -32491,7 +32496,45 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  }), _vm._v("Доп. соглашения")])])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8), _vm._v(" "), _vm._m(9), _vm._v(" "), _vm._m(10), _vm._v(" "), _vm._m(11), _vm._v(" "), _vm._m(12)])])])])])])
+  }), _vm._v("Доп. соглашения")])])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.vd),
+      expression: "vd"
+    }],
+    staticClass: "form-control custom-select mb-3 mr-sm-3 mb-sm-0",
+    attrs: {
+      "id": "inlineFormCustomSelect"
+    },
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.vd = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "selected": ""
+    }
+  }, [_vm._v("Вид документа")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "1"
+    }
+  }, [_vm._v("Договор доходный")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "2"
+    }
+  }, [_vm._v("Договор расходный")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "3"
+    }
+  }, [_vm._v("Дополнительное соглашение")])]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8), _vm._v(" "), _vm._m(9), _vm._v(" "), _vm._m(10), _vm._v(" "), _vm._m(11)])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "panel-heading"
@@ -32518,29 +32561,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "form-group"
   }, [_c('label', [_vm._v("Основное")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('select', {
-    staticClass: "form-control custom-select mb-3 mr-sm-3 mb-sm-0",
-    attrs: {
-      "id": "inlineFormCustomSelect"
-    }
-  }, [_c('option', {
-    attrs: {
-      "selected": ""
-    }
-  }, [_vm._v("Вид документа")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("Договор доходный")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("Договор расходный")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "3"
-    }
-  }, [_vm._v("Дополнительное соглашение")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('select', {
     staticClass: "form-control custom-select mb-3 mr-sm-3 mb-sm-0",

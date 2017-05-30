@@ -74,6 +74,9 @@ class RegistryController extends Controller
     public function show($id)
     {
         //
+        $regid = Registry::find($id);
+
+        return view('dog.show', compact('regid'));
     }
 
     /**
